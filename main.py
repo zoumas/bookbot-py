@@ -1,10 +1,16 @@
+import sys
 from stats import count_words, count_characters, sorted_characters
 
 
 def main():
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    filepath = sys.argv[1]
+
     print("============ BOOKBOT ============")
 
-    filepath = "books/frankenstein.txt"
     print(f"Analyzing book found at {filepath}...")
     contents = get_book_text(filepath)
 
